@@ -31,7 +31,7 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void {
     this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
+      switchMap(params =>
         this.heroService.getHero(+params.get('id')))
     ).subscribe(hero => this.hero = hero);
   }

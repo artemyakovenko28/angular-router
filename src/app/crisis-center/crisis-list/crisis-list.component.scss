@@ -1,0 +1,29 @@
+ul li.selected {
+  background-color: #b5f8ff;
+  //box-shadow: 0.3rem 0.3rem 0.5rem #888888;
+}
+
+ul {
+  list-style-type: none;
+
+  li {
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #888888;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+
+  li:hover {
+    position: relative;
+    left: 10px;
+    color: #ffffff;
+    background-color: #00a8ff;
+    transition: 300ms;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+

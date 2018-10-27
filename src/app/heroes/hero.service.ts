@@ -15,7 +15,7 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    const currentHero = heroes.filter(hero => hero.id === id)[0];
-    return of(currentHero);
+    const fetchedHero: Hero = heroes.filter(hero => hero.id === id)[0];
+    return of(fetchedHero);
   }
 }
