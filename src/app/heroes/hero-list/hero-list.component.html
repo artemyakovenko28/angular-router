@@ -1,0 +1,7 @@
+<h2>HEROES</h2>
+<ul>
+  <li *ngFor="let hero of heroes" routerLink="/heroes/{{hero.id}}"
+      [class.selected]="hero.id === selectedHeroId">
+    {{hero.name}}
+  </li>
+</ul>

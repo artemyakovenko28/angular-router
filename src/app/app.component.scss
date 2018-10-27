@@ -1,0 +1,39 @@
+nav {
+  background: #2D2E2E;
+  width: 100%;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline;
+
+      a {
+        //all: initial;
+        text-decoration: none;
+        cursor: pointer;
+        color: #ffffff;
+        padding: 20px;
+        display: inline-block;
+      }
+
+      .activated {
+        background-color: #00a8ff;
+      }
+    }
+
+    li:hover {
+      a {
+        color: #5fc6ff;
+      }
+
+      a.activated {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,7 @@
+<h3>{{hero?.name}}</h3>
+<div>Id: {{hero.id}}</div>
+<div>
+  <label for="name">Name: </label>
+  <input id="name" type="text" [(ngModel)]="hero.name" placeholder="Name">
+</div>
+<button (click)="goToHeroes()">To heroes</button>
