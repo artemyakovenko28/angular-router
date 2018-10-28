@@ -6,8 +6,13 @@
     <li>
       <a routerLink="/heroes" routerLinkActive="activated">Heroes</a>
     </li>
+    <li>
+      <a [routerLink]="[{ outlets: { popup: ['compose']}}]">Contact</a>
+    </li>
   </ul>
 </nav>
+
 <div [@routeAnimation]="getAnimationData(routerOutlet)">
   <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
+<router-outlet name="popup"></router-outlet>

@@ -4,3 +4,39 @@ body {
   background: #F2F2F2;
   font-family: 'Montserrat', sans-serif;
 }
+
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  background: #00a8ff;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+  transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0069ed;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

@@ -27,7 +27,6 @@ export class CrisisDetailComponent implements OnInit {
     this.route.paramMap.pipe(
       switchMap(params => {
         const id = +params.get('id');
-        console.log(`crisis id = ${id}`);
         return this.crisisService.getCrisis(id);
       })
     ).subscribe(crisis => {
@@ -46,6 +45,7 @@ export class CrisisDetailComponent implements OnInit {
   }
 
   goToCrises(): void {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    const crisisId = this.crisis ? this.crisis.id : null;
+    this.router.navigate(['../', {id: crisisId}], {relativeTo: this.route});
   }
 }

@@ -1,5 +1,6 @@
 <ul>
-  <li *ngFor="let crisis of crises" routerLink="/crisis-center/{{crisis.id}}">
+  <li *ngFor="let crisis of crises" routerLink="/crisis-center/{{crisis.id}}"
+      [class.selected]="crisis.id === selectedCrisisId">
     {{crisis.name}}
   </li>
 </ul>
