@@ -1,6 +1,6 @@
-<h2>CRISES</h2>
 <ul>
   <li *ngFor="let crisis of crises" routerLink="/crisis-center/{{crisis.id}}">
     {{crisis.name}}
   </li>
 </ul>
+<router-outlet></router-outlet>

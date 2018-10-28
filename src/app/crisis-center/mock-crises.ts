@@ -1,20 +1,20 @@
 import {Crisis} from './crisis';
 
-export const crises: Crisis[] = [
+export const CRISES: Crisis[] = [
   {
     id: 0,
     name: 'Dragon Burning Cities'
   },
   {
-    id: 0,
+    id: 1,
     name: 'Sky Rains Great White Sharks'
   },
   {
-    id: 0,
+    id: 2,
     name: 'Giant Asteroid Heading For Earth'
   },
   {
-    id: 0,
+    id: 3,
     name: 'Procrastinators Meeting Delayed Again'
   }
 ];

@@ -1,7 +1,8 @@
-<h3>{{crisis?.name}}</h3>
+<h3>{{editName}}</h3>
 <div>Id: {{crisis?.id}}</div>
 <div>
   <label for="name">Name: </label>
-  <input id="name" type="text" [(ngModel)]="crisis.name" placeholder="Name">
+  <input id="name" type="text" [(ngModel)]="editName" placeholder="Name">
 </div>
-<!--<button (click)="goToHeroes()">To heroes</button>-->
+<button (click)="onSave()">Save</button>
+<button (click)="onCancel()">Cancel</button>

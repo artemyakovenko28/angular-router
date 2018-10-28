@@ -1,21 +1,34 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Crisis} from './crisis';
-import {crises} from './mock-crises';
+import {CRISES} from './mock-crises';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrisisService {
 
+  private static nextCrisisId;
+
   constructor() { }
 
   getCrises(): Observable<Crisis[]> {
-    return of(crises);
+    return of(CRISES);
   }
 
-  getCrisis(id: number): Observable<Crisis> {
-    const fetchedCrisis: Crisis = (crises.filter(crisis => crisis.id === id)[0]);
+  getCrisis(id: number | string): Observable<Crisis> {
+    const fetchedCrisis: Crisis = (CRISES.filter(crisis => crisis.id === id)[0]);
     return of(fetchedCrisis);
+  }
+
+  addCrisis(name: string): void {
+    name = name.trim();
+    if (name) {
+      const crisis: Crisis = {
+        id: CrisisService.nextCrisisId++,
+        name: name
+      };
+      CRISES.push(crisis);
+    }
   }
 }

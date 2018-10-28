@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Crisis} from '../crisis';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
 import {CrisisService} from '../crisis.service';
 
@@ -10,9 +10,12 @@ import {CrisisService} from '../crisis.service';
   styleUrls: ['./crisis-detail.component.scss']
 })
 export class CrisisDetailComponent implements OnInit {
+
   crisis: Crisis;
+  editName: string;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private crisisService: CrisisService) {
   }
 
@@ -22,13 +25,27 @@ export class CrisisDetailComponent implements OnInit {
 
   getCrisis(): void {
     this.route.paramMap.pipe(
-      switchMap(params => this.crisisService.getCrisis(+params.get('id'))
-      )
-    ).subscribe(crisis => this.crisis = crisis);
-    // let id;
-    // this.route.paramMap.subscribe(params => id = params.get('id'));
-    // console.log(`crisis id = ${id}`);
-    // this.crisisService.getCrisis(id).subscribe(crisis => this.crisis = crisis);
+      switchMap(params => {
+        const id = +params.get('id');
+        console.log(`crisis id = ${id}`);
+        return this.crisisService.getCrisis(id);
+      })
+    ).subscribe(crisis => {
+      this.crisis = crisis;
+      this.editName = crisis.name;
+    });
   }
 
+  onSave(): void {
+    this.crisis.name = this.editName;
+    this.goToCrises();
+  }
+
+  onCancel(): void {
+    this.goToCrises();
+  }
+
+  goToCrises(): void {
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
 }
