@@ -9,22 +9,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CrisisCenterModule} from './crisis-center/crisis-center.module';
 import {ComposeMessageComponent} from './compose-message/compose-message.component';
 import {AdminModule} from './admin/admin.module';
-import { LoginComponent } from './auth/login/login.component';
-import {AuthRoutingModule} from './auth/auth-routing.module';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    ComposeMessageComponent,
-    LoginComponent
+    ComposeMessageComponent
   ],
   imports: [
     BrowserModule,
     HeroesModule,
     CrisisCenterModule,
     AdminModule,
-    AuthRoutingModule,
+    AuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

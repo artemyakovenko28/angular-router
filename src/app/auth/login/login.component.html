@@ -1,3 +1,5 @@
-<p>
-  login works!
-</p>
+<h2>Login</h2>
+<div>{{message}}</div>
+
+<button *ngIf="!authService.isLoggedIn" (click)="onLogin()" [disabled]="loggingIn">Log in</button>
+<button *ngIf="authService.isLoggedIn" (click)="onLogout()" [disabled]="loggingOut">Log out</button>

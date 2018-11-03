@@ -16,14 +16,14 @@ export class AuthService {
 
   login(): Observable<boolean> {
     return of(true).pipe(
-      delay(1000),
+      delay(10000),
       tap(() => this.isLoggedIn = true)
     );
   }
 
   logout(): Observable<boolean> {
     return of(true).pipe(
-      delay(1000),
+      delay(4000),
       tap(() => this.isLoggedIn = false)
     );
   }
