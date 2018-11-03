@@ -1,0 +1,35 @@
+nav {
+  ul {
+    list-style-type: none;
+    margin: 3rem;
+
+    li {
+      display: inline;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      background-color: #b3e6ff;
+      border: 2px solid #66ccff;
+      outline: none;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    li.activated {
+      background-color: #1a75ff;
+      border-color: #0047b3;
+      color: white;
+    }
+
+    li:hover {
+      cursor: pointer;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

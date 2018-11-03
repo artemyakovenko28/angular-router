@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li routerLink="./" routerLinkActive="activated" [routerLinkActiveOptions]="{ exact: true }">Dashboard</li>
+    <li routerLink="./crises" routerLinkActive="activated">Manage Crises</li>
+    <li routerLink="./heroes" routerLinkActive="activated">Manage Heroes</li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

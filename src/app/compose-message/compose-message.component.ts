@@ -8,24 +8,26 @@ import {Router} from '@angular/router';
 })
 export class ComposeMessageComponent implements OnInit {
 
-  sending: boolean;
+  sending = false;
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    this.sending = false;
+
   }
 
   onCancel(): void {
     this.closePopup();
   }
 
-  onSend(): void {
+  onSend(message: string): void {
     this.sending = true;
     setTimeout(() => {
+      // console.log(`message from textarea: ${message}`);
       this.sending = false;
       this.closePopup();
+      alert(`message from textarea: ${message}`);
     }, 1000);
   }
 

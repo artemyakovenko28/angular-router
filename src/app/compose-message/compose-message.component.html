@@ -1,6 +1,6 @@
 <h4>Contact Crisis Center</h4>
 <div *ngIf="sending">Sending message...</div>
 <label for="compose-message">Message:</label>
-<textarea id="compose-message" cols="40" rows="10" style></textarea>
-<button (click)="onSend()" [disabled]="sending">Send</button>
+<textarea #message id="compose-message" cols="40" rows="10" style></textarea>
+<button (click)="onSend(message.value)" [disabled]="sending">Send</button>
 <button (click)="onCancel()">Cancel</button>
