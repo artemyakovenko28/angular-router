@@ -8,7 +8,6 @@ import {HeroesModule} from './heroes/heroes.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CrisisCenterModule} from './crisis-center/crisis-center.module';
 import {ComposeMessageComponent} from './compose-message/compose-message.component';
-import {AdminModule} from './admin/admin.module';
 import {AuthModule} from './auth/auth.module';
 
 @NgModule({
@@ -21,7 +20,6 @@ import {AuthModule} from './auth/auth.module';
     BrowserModule,
     HeroesModule,
     CrisisCenterModule,
-    AdminModule,
     AuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
