@@ -49,6 +49,8 @@ export class CrisisDetailComponent implements OnInit {
       return true;
     }
 
+    let observable = Observable.create();
+
     return this.dialogService.confirm('Discard changes?');
   }
 }

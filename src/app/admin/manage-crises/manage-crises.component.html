@@ -1,3 +1,12 @@
-<p>
-  manage-crises works!
-</p>
+<table>
+    <tr>
+      <th>Name</th>
+      <th *ngFor="let day of (students[0].days)">{{day.date | date:'EE dd.MM'}}</th>
+      <th>Sum</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{student.lastName}} {{student.firstName}}</td>
+      <td *ngFor="let day of student.days">{{day.score}}</td>
+      <td class="light-green">{{calculateSum(student.id)}}</td>
+    </tr>
+</table>
